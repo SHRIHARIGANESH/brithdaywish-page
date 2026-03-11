@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -188,28 +187,42 @@ animation:loveAnim 3s ease-in-out infinite;
 <script>
 
 function checkLogin(){
+
 var name=document.getElementById("username").value;
 
 if(name.toLowerCase()=="thango"){
+
 document.getElementById("login").style.display="none";
 document.getElementById("home").style.display="block";
+
+document.getElementById("music").play();
+
 }else{
+
 alert("Only Thango Can Enter 💙");
+
 }
+
 }
 
 function openWish(){
+
 document.getElementById("home").style.display="none";
 document.getElementById("wish").style.display="block";
+
 }
 
 function openFinal(){
+
 document.getElementById("wish").style.display="none";
 document.getElementById("final").style.display="block";
+
 }
 
 function noClick(){
+
 alert("Think again 💙");
+
 }
 
 </script>
@@ -217,6 +230,12 @@ alert("Think again 💙");
 </head>
 
 <body>
+
+<!-- SONG -->
+
+<audio id="music" loop>
+<source src="C:\Users\msi\OneDrive\Desktop\html/audio1.mpeg" type="audio/mpeg">
+</audio>
 
 <!-- HEARTS -->
 
@@ -257,6 +276,7 @@ alert("Think again 💙");
 <div class="cute">🐼</div>
 
 <button onclick="openWish()">Yes</button>
+
 <button onclick="noClick()">No</button>
 
 </div>
@@ -330,21 +350,23 @@ Naa nee nanachicha matheriye jechiduven bayabudatha entha situation laiyum naa u
 <img src="C:\Users\msi\OneDrive\Desktop\html/img4.jpeg" class="loveImg">
 
 <p>
-            Supercalifragilistcexpialidocious💙
-    <br><br>
-🐼 + 🐰 = Forever Love 💙  
+
+Supercalifragilistcexpialidocious💙
+
 <br><br>
+
+🐼 + 🐰 = Forever Love 💙
+
+<br><br>
+
 No matter what happens  
 I will always stay with you 💙
+
 </p>
 
 </div>
 
 </div>
 
-</
-```
-
-
-
-
+</body>
+</html>
