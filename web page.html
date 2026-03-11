@@ -1,0 +1,350 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Birthday Surprise</title>
+
+<style>
+
+/* BODY */
+
+body{
+margin:0;
+font-family:Arial;
+text-align:center;
+color:#0a2a66;
+background:linear-gradient(135deg,#0b3d91,#1e90ff,#ffffff);
+min-height:100vh;
+}
+
+/* FLOATING HEARTS */
+
+.heart{
+position:fixed;
+bottom:-50px;
+font-size:22px;
+animation:float 8s linear infinite;
+opacity:0.8;
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+100%{transform:translateY(-110vh);}
+}
+
+/* PAGES */
+
+.page{
+display:none;
+padding-top:100px;
+}
+
+.active{
+display:block;
+}
+
+/* LOGIN BOX */
+
+.loginBox{
+background:white;
+padding:40px;
+border-radius:20px;
+width:300px;
+margin:auto;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+input{
+padding:12px;
+font-size:16px;
+border-radius:8px;
+border:1px solid #ccc;
+width:80%;
+}
+
+/* BUTTON */
+
+button{
+padding:12px 28px;
+font-size:18px;
+margin:10px;
+border:none;
+border-radius:10px;
+background:#0a2a66;
+color:white;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#1e90ff;
+transform:scale(1.05);
+}
+
+/* PANDA RABBIT EMOJI */
+
+.cute{
+font-size:55px;
+margin:10px;
+animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-10px);}
+}
+
+/* MESSAGE BOX */
+
+.messageBox{
+width:70%;
+height:260px;
+margin:auto;
+padding:25px;
+border-radius:15px;
+box-shadow:0 10px 20px rgba(0,0,0,0.2);
+overflow-y:scroll;
+text-align:left;
+font-size:18px;
+line-height:1.6;
+
+background:linear-gradient(-45deg,#0b3d91,#ffffff,#1e90ff,#ffffff);
+background-size:400% 400%;
+animation:bgMove 10s ease infinite;
+}
+
+@keyframes bgMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+/* MEMORY SECTION */
+
+.memorySection{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:25px;
+margin-top:20px;
+}
+
+.memoryCard{
+width:220px;
+background:white;
+padding:15px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+animation:cardFloat 4s ease-in-out infinite;
+}
+
+.memoryCard img{
+width:100%;
+border-radius:10px;
+}
+
+.memoryCard p{
+margin-top:10px;
+font-size:16px;
+}
+
+@keyframes cardFloat{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-8px);}
+}
+
+/* FINAL SURPRISE BOX */
+
+.loveBox{
+width:420px;
+margin:auto;
+padding:25px;
+border-radius:20px;
+
+background:linear-gradient(-45deg,#0b3d91,#ffffff,#1e90ff,#ffffff);
+background-size:400% 400%;
+animation:bgMove 8s ease infinite;
+
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* PANDA IMAGE */
+
+.loveImg{
+width:260px;
+border-radius:20px;
+animation:loveAnim 3s ease-in-out infinite;
+}
+
+@keyframes loveAnim{
+0%{transform:scale(1) translateY(0);}
+50%{transform:scale(1.08) translateY(-10px);}
+100%{transform:scale(1) translateY(0);}
+}
+
+</style>
+
+<script>
+
+function checkLogin(){
+var name=document.getElementById("username").value;
+
+if(name.toLowerCase()=="thango"){
+document.getElementById("login").style.display="none";
+document.getElementById("home").style.display="block";
+}else{
+alert("Only Thango Can Enter 💙");
+}
+}
+
+function openWish(){
+document.getElementById("home").style.display="none";
+document.getElementById("wish").style.display="block";
+}
+
+function openFinal(){
+document.getElementById("wish").style.display="none";
+document.getElementById("final").style.display="block";
+}
+
+function noClick(){
+alert("Think again 💙");
+}
+
+</script>
+
+</head>
+
+<body>
+
+<!-- HEARTS -->
+
+<div class="heart" style="left:10%">💙</div>
+<div class="heart" style="left:30%">🤍</div>
+<div class="heart" style="left:50%">💙</div>
+<div class="heart" style="left:70%">🤍</div>
+<div class="heart" style="left:90%">💙</div>
+
+<!-- LOGIN PAGE -->
+
+<div id="login" class="page active">
+
+<div class="loginBox">
+
+<h2>Welcome 💙</h2>
+
+<div class="cute">🐼🐰</div>
+
+<p>Enter your name to open the surprise</p>
+
+<input type="text" id="username" placeholder="Enter Your Name">
+
+<br><br>
+
+<button onclick="checkLogin()">Login</button>
+
+</div>
+
+</div>
+
+<!-- HOME PAGE -->
+
+<div id="home" class="page">
+
+<h1>I Am Your Comrade? 💙</h1>
+
+<div class="cute">🐼</div>
+
+<button onclick="openWish()">Yes</button>
+<button onclick="noClick()">No</button>
+
+</div>
+
+<!-- BIRTHDAY PAGE -->
+
+<div id="wish" class="page">
+
+<h1>Advance Happy Birthday THANGO 💙🎂</h1>
+
+<div class="messageBox">
+
+<p>
+
+Hii.. dii pondattiii💙  
+Thango nee naa ennakku avalo pedikkum indha world laiye unna mattum dhan pedikkum.  
+Nee enna sonnalum naa keypen thango nee dhan ennakku ellamme nee mattum mattum dhan pahh.
+
+"NEE ENNA VITTU POIDATHA A KUDAVE ERU"
+
+Naa nee nanachicha matheriye jechiduven bayabudatha entha situation laiyum naa unna vittu poida matten appovum eppavum eppovum o kudave dhan eruppen.
+
+"I AM ALWAYS THERE FOR YOU 💙"
+
+</p>
+
+</div>
+
+<br>
+
+<h2>Our Memories 💙</h2>
+
+<div class="memorySection">
+
+<div class="memoryCard">
+<img src="C:\Users\msi\OneDrive\Desktop\html/img1.jpeg">
+<p>Namba yedutha 1st photo 💙</p>
+</div>
+
+<div class="memoryCard">
+<img src="C:\Users\msi\OneDrive\Desktop\html/img2.jpeg">
+<p>Thiruttu dhana yedutha pic</p>
+</div>
+
+<div class="memoryCard">
+<img src="C:\Users\msi\OneDrive\Desktop\html/img3.jpeg">
+<p>Namba first time unnoda birthday ku unna erudhom 💙</p>
+</div>
+
+<div class="memoryCard">
+<img src="C:\Users\msi\OneDrive\Desktop\html/img5.jpeg">
+<p>AZHAGIIII💙 THANGO💙 PAPA💙</p>
+</div>
+
+</div>
+
+<br><br>
+
+<button onclick="openFinal()">Final Surprise 💙</button>
+
+</div>
+
+<!-- FINAL PAGE -->
+
+<div id="final" class="page">
+
+<h1>Forever Together 💙</h1>
+
+<div class="loveBox">
+
+<img src="C:\Users\msi\OneDrive\Desktop\html/img4.jpeg" class="loveImg">
+
+<p>
+            Supercalifragilistcexpialidocious💙
+    <br><br>
+🐼 + 🐰 = Forever Love 💙  
+<br><br>
+No matter what happens  
+I will always stay with you 💙
+</p>
+
+</div>
+
+</div>
+
+</
+```
+
+
+
+
